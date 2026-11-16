@@ -2,6 +2,8 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QGraphicsScene>
+#include <QGraphicsItem>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -15,9 +17,10 @@ class MainWindow : public QMainWindow
 
 public:
     explicit MainWindow(QWidget *parent = nullptr);
-    ~MainWindow() override;
+    ~MainWindow();
 
 private:
     Ui::MainWindow *ui;
+    QGraphicsScene *scene;
 };
 #endif // MAINWINDOW_H
