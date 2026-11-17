@@ -11,6 +11,7 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     nivel1.cpp \
+    obstaculo.cpp \
     personajebase.cpp \
     personajenivel1.cpp \
     personajenivel2.cpp
@@ -19,6 +20,7 @@ HEADERS += \
     fondo.h \
     mainwindow.h \
     nivel1.h \
+    obstaculo.h \
     personajebase.h \
     personajenivel1.h \
     personajenivel2.h

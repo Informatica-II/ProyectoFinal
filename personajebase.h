@@ -11,10 +11,13 @@ class PersonajeBase : public QObject, public QGraphicsPixmapItem {
 
 public:
     PersonajeBase();
-    virtual ~PersonajeBase();
 
     virtual void actualizarMovimiento() = 0;
     virtual void actualizarAnimacion() = 0;
+    void morir();
+    void revivir();
+
+    virtual ~PersonajeBase();
 
 public slots:
     void tickPrincipal();

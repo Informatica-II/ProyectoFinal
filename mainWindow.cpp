@@ -14,6 +14,12 @@ MainWindow::MainWindow(QWidget *parent)
     ui->graphicsView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     ui->graphicsView->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 
+    ui->graphicsView->setFrameShape(QFrame::NoFrame);
+
+    ui->graphicsView->setAlignment(Qt::AlignLeft | Qt::AlignTop);
+
+    this->setFixedSize(1376, 768);
+
     Nivel1* primerNivel = new Nivel1(scene);
     primerNivel->iniciarNivel();
 }
@@ -22,4 +28,3 @@ MainWindow::~MainWindow()
 {
     delete ui;
 }
-

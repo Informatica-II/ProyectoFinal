@@ -8,6 +8,18 @@ PersonajeBase::PersonajeBase() {
     timerJuego->start(16);
 }
 
+void PersonajeBase::morir() {
+    if (timerJuego->isActive()) {
+        timerJuego->stop();
+    }
+}
+
+void PersonajeBase::revivir() {
+    if (!timerJuego->isActive()) {
+        timerJuego->start(16);
+    }
+}
+
 void PersonajeBase::tickPrincipal() {
     actualizarMovimiento();
     actualizarAnimacion();

@@ -15,6 +15,18 @@ Fondo::Fondo(const char* rutaImagen, int posX, int velocidad) {
     timerMovimiento->start(16);
 }
 
+void Fondo::detener() {
+    if (timerMovimiento->isActive()) {
+        timerMovimiento->stop();
+    }
+}
+
+void Fondo::reanudar() {
+    if (!timerMovimiento->isActive()) {
+        timerMovimiento->start(16);
+    }
+}
+
 void Fondo::actualizarMovimiento() {
     setPos(x() - velocidadX, y());
 

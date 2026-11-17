@@ -31,6 +31,11 @@ PersonajeNivel1::PersonajeNivel1() : PersonajeBase() {
 void PersonajeNivel1::keyPressEvent(QKeyEvent *event) {
     if (event->isAutoRepeat()) return;
 
+    if (!timerJuego->isActive()) {
+        event->ignore();
+        return;
+    }
+
     if (event->key() == Qt::Key_Space) {
         if (enElSuelo) {
             velocidadY = -15.0f;
@@ -96,4 +101,11 @@ void PersonajeNivel1::actualizarAnimacion() {
             setPixmap(spriteSalto.copy(frameActual * anchoFrame, 0, anchoFrame, altoFrame));
         }
     }
+}
+
+void PersonajeNivel1::resetearPosicion() {
+    carrilActual = 1;
+    limiteSueloY = posicionesCarriles[carrilActual];
+
+    setPos(150, limiteSueloY);
 }

@@ -32,6 +32,8 @@ public:
 
     void actualizarMovimiento() override;
     void actualizarAnimacion() override;
+    float getSueloActual() const { return limiteSueloY; }
+    void resetearPosicion();
 };
 
 #endif // PERSONAJENIVEL1_H

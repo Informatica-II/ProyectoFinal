@@ -15,6 +15,8 @@ private:
 
 public:
     Fondo(const char* rutaImagen, int posX, int velocidad);
+    void detener();
+    void reanudar();
     int getAncho() const { return anchoImagen; }
 
 public slots:
