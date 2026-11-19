@@ -21,11 +21,39 @@ private:
     QGraphicsTextItem* textoGameOver;
     QPushButton* botonReinicio;
     QGraphicsProxyWidget* proxyBotonReinicio;
+    QGraphicsRectItem* barraFondo;
+    QGraphicsRectItem* barraProgreso;
+    QTimer* timerProgreso;
+    int tiempoTranscurrido;
+    int tiempoMeta;
+    float anchoMaximoBarra;
+    QGraphicsTextItem* textoVictoria;
+
+    int dificultadActual;
+    int intervaloSpawn;
+    int velocidadObstaculos;
+    int velocidadFondo;
+
+    QGraphicsPixmapItem* fondoMenu;
+    QGraphicsTextItem* textoDificultad;
+    QGraphicsProxyWidget* proxyFacil;
+    QGraphicsProxyWidget* proxyNormal;
+    QGraphicsProxyWidget* proxyDificil;
+    void configurarDificultad(int dif);
+
+    QGraphicsPixmapItem* avalancha;
+    QTimer* timerAtaqueAvalancha;
+    int intervaloAtaqueAvalancha;
+    float tiempoVueloEscombro;
 
 private slots:
     void generarObstaculo();
+    void lanzarEscombro();
     void ejecutarGameOver();
     void reiniciarNivel();
+    void actualizarProgreso();
+    void ejecutarVictoria();
+    void comenzarPartida(int dif);
 
 public:
     Nivel1(QGraphicsScene* escena);

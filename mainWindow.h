@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <QGraphicsScene>
 #include <QGraphicsItem>
+#include "Nivel1.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -22,5 +23,6 @@ public:
 private:
     Ui::MainWindow *ui;
     QGraphicsScene *scene;
+    Nivel1* primerNivel;
 };
 #endif // MAINWINDOW_H

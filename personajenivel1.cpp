@@ -3,8 +3,7 @@
 PersonajeNivel1::PersonajeNivel1() : PersonajeBase() {
     gravedad = 0.8f;
     velocidadY = 0.0f;
-    enElSuelo = false;
-    limiteSueloY = 540.0f;
+    enElSuelo = true;
 
     anchoFrame = 100;
     altoFrame = 100;
@@ -106,6 +105,12 @@ void PersonajeNivel1::actualizarAnimacion() {
 void PersonajeNivel1::resetearPosicion() {
     carrilActual = 1;
     limiteSueloY = posicionesCarriles[carrilActual];
+    velocidadY = 0.0f;
+    enElSuelo = true;
+    frameActual = 0;
+    contadorAnimacion = 0;
 
+    setZValue(10 + carrilActual);
+    setPixmap(spriteCorrer.copy(0, 0, anchoFrame, altoFrame));
     setPos(150, limiteSueloY);
 }

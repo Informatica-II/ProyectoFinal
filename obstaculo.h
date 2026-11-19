@@ -3,8 +3,10 @@
 
 #include <QObject>
 #include <QGraphicsPixmapItem>
+#include <QGraphicsEllipseItem>
+#include <QGraphicsScene>
 #include <QTimer>
-#include "personajenivel1.h"
+#include "PersonajeNivel1.h"
 
 class Obstaculo : public QObject, public QGraphicsPixmapItem {
     Q_OBJECT
@@ -14,8 +16,18 @@ private:
     QTimer* timerMovimiento;
     PersonajeNivel1* homero;
 
+    bool esParabolico;
+    QGraphicsEllipseItem* marcaImpacto;
+    float x0, y0;
+    float vx, vy0;
+    float gravedad;
+    float tiempoActual;
+    float tiempoVuelo;
+    float anguloRotacion;
+
 public:
     Obstaculo(int carrilY, int velocidad, PersonajeNivel1* jugador);
+    Obstaculo(int carrilY, float duracionVuelo, PersonajeNivel1* jugador, QGraphicsScene* escena);
     void detener();
     ~Obstaculo();
 

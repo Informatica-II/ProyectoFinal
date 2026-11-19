@@ -1,6 +1,5 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "Nivel1.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -20,11 +19,12 @@ MainWindow::MainWindow(QWidget *parent)
 
     this->setFixedSize(1376, 768);
 
-    Nivel1* primerNivel = new Nivel1(scene);
+    primerNivel = new Nivel1(scene);
     primerNivel->iniciarNivel();
 }
 
 MainWindow::~MainWindow()
 {
+    delete primerNivel;
     delete ui;
 }
